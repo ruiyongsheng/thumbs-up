@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>点赞</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body,
+    html {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    ul,
+    li {
+      list-style: none;
+    }
+
+    #thumb {
+      width: 200px;
+      height: 200px;
+      padding: 20px 50px;
+      position: relative;
+      left: 50%;
+      margin-top: -100px;
+      margin-left: -100px;
+      top: 50%;
+      box-sizing: border-box;
+    }
+
+    #thumb .first {
+      width: 20px;
+      height: 40px;
+      border: 1px solid red;
+      border-top-left-radius: 10px;
+      border-bottom-right-radius: 0px;
+      transform: rotateZ(15deg) translateY(10px) translateX(7px);
+    }
+
+    #thumb li {
+      width: 80px;
+      height: 20px;
+      background: red;
+      border: 1px solid red;
+      border-bottom-right-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    #thumb .three {
+      width: 100px;
+    }
+
+    #thumb .four {
+      width: 90px;
+    }
+
+    #thumb .empty {
+      width: 18px;
+      height: 90px;
+      background: red;
+      border-radius: 30% 50%;
+      position: absolute;
+      left: 22px;
+      top: 60px;
+    }
+
+    #thumb .point {
+      position: absolute;
+      right: 0;
+      top: 0;
+      font-size: 20px;
+    }
+
+    #thumb .point span {
+      color: red;
+      font-size: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="thumb">
+    <p class="empty"></p>
+    <li class="first"></li>
+    <li class="second"></li>
+    <li class="three"></li>
+    <li class="four"></li>
+    <li class="five"></li>
+    <p class="point">点赞+
+      <span class="pointNum">0</span>
+    </p>
+  </div>
+  <script src="https://cdn.bootcss.com/systemjs/0.21.0/system-production.js"></script>
+  <script src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    SystemJS.import('./js/index.js').then(function () {
+      $('#thumb').on('click', function () {
+        var pointNum = a.add();
+        $('.pointNum').html(pointNum);
+      });
+    });
+  </script>
+</body>
+
+</html>
